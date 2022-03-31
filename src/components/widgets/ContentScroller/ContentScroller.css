@@ -1,0 +1,35 @@
+.py-x {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.block1 {
+  background-color: #bcdbf9;
+}
+.block2 {
+  background-color: #f8b1b1;
+  height: 420px;
+  display: grid;
+}
+.block3 {
+  background-color: #bcbef9;
+}
+.bg-clr-4 {
+  background-color: #bcf6f9;
+}
+.bg-clr-5 {
+  background-color: #b1b8f8;
+}
+.bg-clr-6 {
+  background-color: #f9ecbc;
+}
+.block1 img {
+  border-radius: 4px 0px 0px 0px;
+}
+.block2 img {
+  width: 639px;
+  height: auto;
+  margin-left: -53px;
+  object-fit: cover;
+  max-width: unset;
+  margin-top: -17px;
+}

@@ -1,0 +1,16 @@
+.Swiper {
+  box-shadow: rgb(0 0 0 / 10%) 0px 20px 20px 5px;
+  overflow: hidden;
+}
+.dragger {
+  max-width: 50px;
+  position: absolute;
+  top: calc(80% - 25px);
+  left: -16px;
+}
+.dark-image {
+  border-radius: 0.6rem;
+}
+.space-t {
+  margin-top: 5rem;
+}
