@@ -64,7 +64,7 @@ const ContentScroller = () => {
             <div className="block3 rounded-5 overflow-hidden">
               <StaticImage
                 src="/assets/images/contents/img3.png"
-                className="mt-5 mx-5"
+                className="mt-5 mx-4"
               />
             </div>
           </div>
