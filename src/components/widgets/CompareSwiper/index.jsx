@@ -28,6 +28,7 @@ const CompareSwiper = () => {
             <img
               src={require('assets/icons/draggable.svg').default}
               className="dragger"
+              alt="dragger"
             />
           </div>
         }
