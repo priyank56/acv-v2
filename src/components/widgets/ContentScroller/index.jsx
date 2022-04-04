@@ -1,5 +1,5 @@
 import StaticImage from 'components/blocks/Image';
-import React, { useState } from 'react';
+import React from 'react';
 
 import './ContentScroller.css';
 
