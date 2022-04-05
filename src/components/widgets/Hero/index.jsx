@@ -6,7 +6,7 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-    <div className="hero space-x">
+    <div className="space-x">
       <div className="container">
         <MainHeading />
         <CompareSwiper />
