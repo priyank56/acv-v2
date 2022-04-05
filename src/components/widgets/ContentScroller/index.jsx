@@ -6,37 +6,41 @@ import './ContentScroller.css';
 const scrollHandler = () => {
   const elems = document.querySelectorAll('.section-wrapper');
   // console.dir(elems.);
+  const vh = Math.round(window.innerHeight / 100);
   elems?.forEach((el) => {
     if (
-      50 > el.getBoundingClientRect()?.top ||
-      el.getBoundingClientRect()?.top > 500
+      vh / 2 > el.getBoundingClientRect()?.top ||
+      el.getBoundingClientRect()?.top > 600
     ) {
-      el.classList.remove('active');
+      if (el.classList.contains('active')) el.classList.remove('active');
     } else {
-      el.classList.add('active');
+      console.log(el.classList.contains('active'));
+      if (!el.classList.contains('active')) {
+        el.classList.add('active');
+        const elm = el.getAttribute('itemID');
 
-      const elm = el.getAttribute('itemID');
-      document
-        .getElementById(`img${elm.substring(0, 1)}`)
-        .classList.add('effect');
-      setTimeout(() => {
-        document
-          .getElementById(`img${elm.substring(0, 1)}`)
-          .classList.remove('effect');
-      }, 500);
-      elm?.includes('1-') || false
-        ? (document.getElementById(
-            `img${elm.substring(0, 1)}`
-          ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-        : elm.includes('2-')
-        ? (document.getElementById(
-            `img${elm.substring(0, 1)}`
-          ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-        : elm.includes('3-')
-        ? (document.getElementById(
-            `img${elm.substring(0, 1)}`
-          ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-        : (document.getElementById(`img1`).src = '');
+        // var activeEle = document.querySelectorAll('.active');
+        // [].forEach.call(activeEle, function (el) {
+        //   el.classList.remove('active');
+        // });
+        // document
+        //   .getElementById(`img${elm.substring(0, 1)}`)
+        //   .classList.add('active');
+
+        elm?.includes('1-') || false
+          ? (document.getElementById(
+              `img${elm.substring(0, 1)}`
+            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
+          : elm.includes('2-')
+          ? (document.getElementById(
+              `img${elm.substring(0, 1)}`
+            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
+          : elm.includes('3-')
+          ? (document.getElementById(
+              `img${elm.substring(0, 1)}`
+            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
+          : (document.getElementById(`img1`).src = '');
+      }
     }
   });
 };
@@ -54,7 +58,7 @@ const ContentScroller = () => {
             </h2>
           </div>
         </div>
-        <div className="row scroller-container gx-5">
+        <div className="row scroller-container gx-2">
           <div className="text-start col-blocks">
             <div className="section">
               <div className="section-wrapper" itemID="1-1">
@@ -92,21 +96,17 @@ const ContentScroller = () => {
           </div>
           <div className="col col-imgs">
             <div className="block1 rounded-5 overflow-hidden">
-              <StaticImage
-                src="/assets/images/contents/img1.png"
-                className="mt-5 ms-5"
-                id="img1"
-              />
+              <StaticImage src="/assets/images/contents/img1.png" id="img1" />
             </div>
           </div>
         </div>
-        <div className="row scroller-container gx-5">
-          <div className="col-lg-6 col-md-10 mb-5 mt-5 col-imgs">
+        <div className="row scroller-container gx-2">
+          <div className="col col-imgs">
             <div className="block2 rounded-5 mb-5 overflow-visible">
               <StaticImage src="/assets/images/contents/img2.png" id="img2" />
             </div>
           </div>
-          <div className="col-lg-6 col-md-10 mb-5 p-5 mt-5 text-start">
+          <div className="text-start col-blocks">
             <div className="section">
               <div className="section-wrapper" itemID="2-1">
                 <h3>Organize whiteboards lectures</h3>
@@ -142,8 +142,8 @@ const ContentScroller = () => {
             </div>
           </div>
         </div>
-        <div className="row scroller-container gx-5">
-          <div className="col-lg-6 col-md-10 mb-5 p-5 text-start col-blocks">
+        <div className="row scroller-container gx-2">
+          <div className="text-start col-blocks">
             <div className="section">
               <div className="section-wrapper" itemID="3-1">
                 <h3>Organize whiteboards lectures</h3>
@@ -178,7 +178,7 @@ const ContentScroller = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-10 mb-5 col-imgs">
+          <div className="col col-imgs">
             <div className="block3 rounded-5 overflow-hidden">
               <StaticImage
                 src="/assets/images/contents/img3.png"

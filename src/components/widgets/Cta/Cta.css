@@ -1,0 +1,23 @@
+.Cta {
+  height: 620px;
+  background-color: #f5f5f5;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Cta h1 {
+  font-size: 52px;
+  font-weight: 600;
+}
+
+/* .Cta .btn-danger {
+  background-color: #f5f5f5;
+  color: #121212;
+  border-color: transparent;
+}
+
+.Cta .btn-danger:hover {
+  color: #f5f5f5;
+} */

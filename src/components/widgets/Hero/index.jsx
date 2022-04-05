@@ -2,7 +2,7 @@ import React from 'react';
 import CompareSwiper from '../CompareSwiper';
 import MainHeading from '../MainHeading';
 
-import './hero.css';
+import './Hero.css';
 
 const Hero = () => {
   return (
