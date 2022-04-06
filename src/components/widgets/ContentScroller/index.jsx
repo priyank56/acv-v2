@@ -1,10 +1,10 @@
-import StaticImage from 'components/blocks/Image';
-import React from 'react';
+import StaticImage from "components/blocks/Image";
+import React from "react";
 
-import './ContentScroller.css';
+import "./ContentScroller.css";
 
 const scrollHandler = () => {
-  const elems = document.querySelectorAll('.section-wrapper');
+  const elems = document.querySelectorAll(".section-wrapper");
   // console.dir(elems.);
   const vh = Math.round(window.innerHeight / 100);
   elems?.forEach((el) => {
@@ -12,40 +12,40 @@ const scrollHandler = () => {
       vh / 2 > el.getBoundingClientRect()?.top ||
       el.getBoundingClientRect()?.top > 600
     ) {
-      if (el.classList.contains('active')) el.classList.remove('active');
+      if (el.classList.contains("active")) el.classList.remove("active");
     } else {
-      console.log(el.classList.contains('active'));
-      if (!el.classList.contains('active')) {
-        el.classList.add('active');
-        const elm = el.getAttribute('itemID');
+      console.log(el.classList.contains("active"));
+      if (!el.classList.contains("active")) {
+        el.classList.add("active");
+        const elm = el.getAttribute("itemID");
 
-        // var activeEle = document.querySelectorAll('.active');
+        // var activeEle = document.querySelectorAll(".active");
         // [].forEach.call(activeEle, function (el) {
-        //   el.classList.remove('active');
+        //   el.classList.remove("active");
         // });
         // document
         //   .getElementById(`img${elm.substring(0, 1)}`)
-        //   .classList.add('active');
+        //   .classList.add("active");
 
-        elm?.includes('1-') || false
+        elm?.includes("1-") || false
           ? (document.getElementById(
               `img${elm.substring(0, 1)}`
             ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : elm.includes('2-')
+          : elm.includes("2-")
           ? (document.getElementById(
               `img${elm.substring(0, 1)}`
             ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : elm.includes('3-')
+          : elm.includes("3-")
           ? (document.getElementById(
               `img${elm.substring(0, 1)}`
             ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : (document.getElementById(`img1`).src = '');
+          : (document.getElementById(`img1`).src = "");
       }
     }
   });
 };
 
-document.querySelector('body').onscroll = scrollHandler;
+document.querySelector("body").onscroll = scrollHandler;
 const ContentScroller = () => {
   return (
     <div className="scroller bg-white">
@@ -102,7 +102,7 @@ const ContentScroller = () => {
         </div>
         <div className="row scroller-container gx-2">
           <div className="col col-imgs">
-            <div className="block2 rounded-5 mb-5 overflow-visible">
+            <div className="block2 rounded-5 overflow-hidden">
               <StaticImage src="/assets/images/contents/img2.png" id="img2" />
             </div>
           </div>
@@ -180,11 +180,7 @@ const ContentScroller = () => {
           </div>
           <div className="col col-imgs">
             <div className="block3 rounded-5 overflow-hidden">
-              <StaticImage
-                src="/assets/images/contents/img3.png"
-                className="mt-5 mx-4"
-                id="img3"
-              />
+              <StaticImage src="/assets/images/contents/img3.png" id="img3" />
             </div>
           </div>
         </div>

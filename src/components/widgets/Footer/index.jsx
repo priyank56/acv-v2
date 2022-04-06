@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './Footer.css';
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -43,16 +43,13 @@ const Footer = () => {
                       </a>
                     </div>
                     <div>
-                      <a
-                        href="https://maze.co/product-updates"
-                        rel="noreferrer noopener"
-                      >
+                      <a href="/product-updates" rel="noreferrer noopener">
                         <p>What's New</p>
                       </a>
                     </div>
                     <div>
                       <a
-                        href="https://maze.co/blog/customer-stories/"
+                        href="/blog/customer-stories/"
                         rel="noreferrer noopener"
                       >
                         <p>Customers</p>
@@ -172,7 +169,7 @@ const Footer = () => {
                     </div>
                     <div>
                       <a
-                        href="https://maze.co/blog/maze-question-bank/"
+                        href="/blog/maze-question-bank/"
                         rel="noreferrer noopener"
                       >
                         <p>Question Bank</p>
@@ -228,21 +225,15 @@ const Footer = () => {
               <div className="d-flex align-item-center">
                 <div className="pe-2">Copyright © 2022 ACV</div>
                 <span className="divider" />
-                <div className="ps-2 pe-2">
-                  <a title="Privacy policy" href="/privacy-policy/">
-                    Privacy policy
-                  </a>
-                </div>
-                <span className="divider" />
-                <div className="ps-2 pe-2">
-                  <a title="Security" href="/security/">
-                    Security
-                  </a>
-                </div>
-                <span className="divider" />
                 <div className="ps-2">
                   <a title="Terms of service" href="/tos/">
                     Terms of service
+                  </a>
+                </div>
+                <span className="divider" />
+                <div className="ps-2 pe-2">
+                  <a title="Privacy policy" href="/privacy-policy/">
+                    Privacy policy
                   </a>
                 </div>
               </div>
