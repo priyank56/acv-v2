@@ -1,6 +1,6 @@
 import React from 'react';
-import CompareSwiper from '../CompareSwiper';
-import MainHeading from '../MainHeading';
+import CompareSwiper from 'components/widgets/CompareSwiper';
+import MainHeading from 'components/widgets/MainHeading';
 
 import './hero.css';
 

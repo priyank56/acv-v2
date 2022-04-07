@@ -1,51 +1,39 @@
-import StaticImage from "components/blocks/Image";
-import React from "react";
+import StaticImage from 'components/blocks/Image';
+import React from 'react';
 
-import "./ContentScroller.css";
+import './ContentScroller.css';
 
+const imageHandler = (elm) => {
+  document
+    .querySelectorAll(`.wrap${elm.substring(0, 1)} .block`)
+    .forEach((itag) => {
+      if (itag.classList.contains('active')) itag?.classList?.remove('active');
+    });
+  document
+    .querySelector(`.wrap${elm.substring(0, 1)} .b${elm.substring(2, 3)}`)
+    ?.classList?.add('active');
+};
 const scrollHandler = () => {
-  const elems = document.querySelectorAll(".section-wrapper");
-  // console.dir(elems.);
+  const elems = document.querySelectorAll('.section-wrapper');
   const vh = Math.round(window.innerHeight / 100);
   elems?.forEach((el) => {
     if (
       vh / 2 > el.getBoundingClientRect()?.top ||
       el.getBoundingClientRect()?.top > 600
     ) {
-      if (el.classList.contains("active")) el.classList.remove("active");
+      if (el.classList.contains('active')) el.classList.remove('active');
     } else {
-      console.log(el.classList.contains("active"));
-      if (!el.classList.contains("active")) {
-        el.classList.add("active");
-        const elm = el.getAttribute("itemID");
-
-        // var activeEle = document.querySelectorAll(".active");
-        // [].forEach.call(activeEle, function (el) {
-        //   el.classList.remove("active");
-        // });
-        // document
-        //   .getElementById(`img${elm.substring(0, 1)}`)
-        //   .classList.add("active");
-
-        elm?.includes("1-") || false
-          ? (document.getElementById(
-              `img${elm.substring(0, 1)}`
-            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : elm.includes("2-")
-          ? (document.getElementById(
-              `img${elm.substring(0, 1)}`
-            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : elm.includes("3-")
-          ? (document.getElementById(
-              `img${elm.substring(0, 1)}`
-            ).src = `/assets/images/contents/img${elm.substring(2, 3)}.png`)
-          : (document.getElementById(`img1`).src = "");
+      if (!el.classList.contains('active')) {
+        el.classList.add('active');
+        const elm = el.getAttribute('itemID');
+        imageHandler(elm);
       }
     }
   });
 };
 
-document.querySelector("body").onscroll = scrollHandler;
+document.querySelector('body').onscroll = scrollHandler;
+
 const ContentScroller = () => {
   return (
     <div className="scroller bg-white">
@@ -94,16 +82,28 @@ const ContentScroller = () => {
               </div>
             </div>
           </div>
-          <div className="col col-imgs">
-            <div className="block1 rounded-5 overflow-hidden">
-              <StaticImage src="/assets/images/contents/img1.png" id="img1" />
+          <div className="col col-imgs wrap1">
+            <div className="block b1 active rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img1.png" />
+            </div>
+            <div className="block b2 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img2.png" />
+            </div>
+            <div className="block b3 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img3.png" />
             </div>
           </div>
         </div>
         <div className="row scroller-container gx-2">
-          <div className="col col-imgs">
-            <div className="block2 rounded-5 overflow-hidden">
-              <StaticImage src="/assets/images/contents/img2.png" id="img2" />
+          <div className="col col-imgs wrap2">
+            <div className="block b1 active rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img1.png" />
+            </div>
+            <div className="block b2 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img2.png" />
+            </div>
+            <div className="block b3 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img3.png" />
             </div>
           </div>
           <div className="text-start col-blocks">
@@ -178,9 +178,15 @@ const ContentScroller = () => {
               </div>
             </div>
           </div>
-          <div className="col col-imgs">
-            <div className="block3 rounded-5 overflow-hidden">
-              <StaticImage src="/assets/images/contents/img3.png" id="img3" />
+          <div className="col col-imgs wrap3">
+            <div className="block b1 active rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img1.png" />
+            </div>
+            <div className="block b2 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img2.png" />
+            </div>
+            <div className="block b3 rounded-5 overflow-visible">
+              <StaticImage src="/assets/images/contents/img3.png" />
             </div>
           </div>
         </div>
