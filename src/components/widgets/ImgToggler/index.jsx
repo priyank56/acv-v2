@@ -21,7 +21,11 @@ const ImgToggler = () => {
             />
           </a>
         </div>
-        <img src="/assets/images/dashboard.png" width="100%" />
+        <img
+          src="/assets/images/dashboard.png"
+          width="100%"
+          alt="Dashboard Img"
+        />
       </div>
     </div>
   );
