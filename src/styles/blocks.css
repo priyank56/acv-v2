@@ -1,12 +1,15 @@
 .brand-btn {
-  width: 260px;
-  height: 64px;
+  /* width: 260px; */
+  height: 58px;
   background-color: #f05454;
   border-color: #f05454;
-  border-radius: 14px;
+  border-radius: 8px;
   color: white;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 1.2rem;
   color: #f5f5f5;
-  cursor: url('/public/assets/cursor-light.svg'), pointer !important;
+  padding: 0 1.2rem;
 }
+/* .btn-danger.brand-btn {
+  cursor: url('/public/assets/cursor-light.svg'), pointer !important;
+} */

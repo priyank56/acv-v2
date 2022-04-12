@@ -1,0 +1,56 @@
+.btn-neutral {
+  background-color: transparent !important;
+  color: #273444 !important;
+  border: 2px solid #e2e8f0 !important;
+}
+.btn-neutral:focus {
+  box-shadow: 0 0 0 0.25rem #e2e8f0 !important;
+}
+.home .brand-btn {
+  /* font-size: 1.2rem; */
+}
+.card {
+  transition: all 0.25s ease-in-out;
+  border-radius: 0.5rem;
+}
+.card:hover {
+  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; */
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05) !important;
+}
+.dash-section {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  color: #f5f5f5;
+}
+.card {
+  background-color: transparent;
+}
+.text-dark-muted {
+  color: #e4e4e4;
+}
+
+.mt-6 {
+  margin-top: 5rem;
+}
+
+.dash-section .title {
+  --bs-bg-opacity: 1;
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  color: rgba(var(--bs-brand-rgb), var(--bs-bg-opacity));
+}
+
+.dash-section .detail {
+  color: #e4e4e4;
+  font-size: 1.1rem !important;
+}
+
+.hero-main .bg-lght {
+  background: white;
+}
+@media all and (min-width: 992px) {
+  .hero-main .bg-lght {
+    background: white;
+    border-bottom-right-radius: 100%;
+  }
+}

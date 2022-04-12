@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./Footer.css";
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -224,8 +224,7 @@ const Footer = () => {
             <div className="col-6">
               <div className="d-flex align-item-center">
                 <div className="pe-2">Copyright © 2022 ACV</div>
-                <span className="divider" />
-                <div className="ps-2">
+                <div className="ps-2 pe-2">
                   <a title="Terms of service" href="/tos/">
                     Terms of service
                   </a>

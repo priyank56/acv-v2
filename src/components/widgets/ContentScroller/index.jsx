@@ -47,7 +47,7 @@ const ContentScroller = () => {
           </div>
         </div>
         <div className="row scroller-container gx-2">
-          <div className="text-start col-blocks">
+          <div className="text-start col-blocks col-md-5">
             <div className="section">
               <div className="section-wrapper" itemID="1-1">
                 <h3>Organize whiteboards lectures</h3>

@@ -1,7 +1,7 @@
-import React from "react";
-import * as Icon from "react-feather";
+import React from 'react';
+import * as Icon from 'react-feather';
 
-import "styles/layout.css";
+import 'styles/layout.css';
 
 const Header = () => {
   return (
@@ -32,377 +32,99 @@ const Header = () => {
         <div className="collapse navbar-collapse ms-3" id="navbarExample1">
           <ul
             className="navbar-nav me-auto ps-lg-0"
-            style={{ paddingLeft: "0.15rem" }}
+            style={{ paddingLeft: '0.15rem' }}
           >
-            <li className="nav-item">
+            <li className="nav-item dropdown position-static">
               <a
                 className="nav-link dropdown-toggle"
                 href="/"
-                id="navbarProducts"
+                id="productsDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Products
               </a>
+
               <div
-                className="dropdown-menu w-100 m-0 p-0"
-                aria-labelledby="navbarProducts"
+                className="dropdown-menu w-100 mt-0"
+                aria-labelledby="productsDropdown"
               >
-                <div overflow="hidden" className="nav-container pt-4 pb-5">
-                  <div className="container px-4">
-                    <div className="row justify-content-center">
-                      <div className="col-md-3">
-                        <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                          <div className="border-bottom mb-4 sc-bdvvaa sc-gsDJrp hZfQVt jXLjZO Flex-fdCmZB fKbRKc">
-                            <div className="float-start pe-3 sc-bdvvaa gZrIkC Box-cYwFwn byZIfc">
-                              <img
-                                draggable="false"
-                                src="https://www.datocms-assets.com/38511/1639586901-maze-by-use-case.svg"
-                                alt="By use case"
-                                // style="max-width:24px;height:auto"
-                              />
-                            </div>
-                            <p
-                              //   style="letter-spacing:0.06em"
-                              className="Text-jBexRX Text__StyledText-sc-12egtmw-0 fpYGqy"
-                            >
-                              By use case
-                            </p>
+                <div className="container">
+                  <div className="row my-3">
+                    <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                      <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                          <div class="overflow-hidden rounded-2">
+                            <img
+                              src="/assets/images/contents/small/img1.png"
+                              class="img-fluid img-center"
+                              alt="Illustration"
+                            />
                           </div>
-                          <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                            <div
-                              //   style="gap:28px 0"
-                              className="sc-hKwCoD dgEjxi"
-                            >
-                              <div className="sc-eCImvq hBziiI">
-                                <div
-                                  //   style="gap:28px 0"
-                                  className="sc-bdvvaa sc-gsDJrp hKmdYz jXLjZO Flex-fdCmZB jQeDCS"
-                                >
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/use-cases/wireframe-and-usability-testing/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Wireframe &amp; Usability Test{" "}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/use-cases/concept-and-idea-validation/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Concept &amp; Idea Validation
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/use-cases/content-and-copy-testing/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Content &amp; Copy Testing
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/use-cases/feedback-and-satisfaction/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Feedback &amp; Satisfaction
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          <h5 class="title mt-3 mb-2 text-brand fw-600">
+                            Attendance
+                          </h5>
+                          <p class="detail fs-6 mb-0">
+                            For this you have 4 interesting information boards.
+                          </p>
                         </div>
                       </div>
-                      <div className="col-md-6 kmNCXo">
-                        <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                          <div className="border-bottom mb-4 sc-bdvvaa sc-gsDJrp hZfQVt jXLjZO Flex-fdCmZB fKbRKc">
-                            <div className="float-start pe-3 sc-bdvvaa gZrIkC Box-cYwFwn byZIfc">
-                              <img
-                                draggable="false"
-                                src="https://www.datocms-assets.com/38511/1639586863-maze-by-feature.svg"
-                                alt="By Feature"
-
-                                // style="max-width:24px;height:auto"
-                              />
-                            </div>
-                            <p
-                              //   style="letter-spacing:0.06em"
-
-                              className="Text-jBexRX Text__StyledText-sc-12egtmw-0 fpYGqy"
-                            >
-                              By Feature
-                            </p>
+                    </div>
+                    <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                      <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                          <div class="overflow-hidden rounded-2">
+                            <img
+                              src="/assets/images/contents/small/img2.png"
+                              class="img-fluid img-center"
+                              alt="Illustration"
+                            />
                           </div>
-                          <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                            <div
-                              //   style="gap:28px 0"
-                              className="d-flex flex-column sc-hKwCoD dgEjxi"
-                            >
-                              <div className="sc-eCImvq dvdPZw">
-                                <div
-                                  //   style="gap:28px 0"
-                                  className="sc-bdvvaa sc-gsDJrp hKmdYz jXLjZO Flex-fdCmZB jQeDCS"
-                                >
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/prototype-testing/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Prototype Testing
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/tree-testing/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Tree Testing
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/five-second-test/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            5-Second Test
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/surveys/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Surveys
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/testers-panel/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Panel
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                              <div className="sc-eCImvq dvdPZw">
-                                <div
-                                  //   style="gap:28px 0"
-                                  className="sc-bdvvaa sc-gsDJrp hKmdYz jXLjZO Flex-fdCmZB jQeDCS"
-                                >
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/card-sorting"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Card Sorting
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/features/clips-video-recordings/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Video Recordings
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/platform/reach/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Participant Management
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          <h5 class="title mt-3 mb-2 text-brand fw-600">
+                            Dashboard
+                          </h5>
+                          <p class="detail fs-6 mb-0">
+                            For this you have 4 interesting information boards.
+                          </p>
                         </div>
                       </div>
-                      <div className="col-md-3">
-                        <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                          <div className="border-bottom mb-4 sc-bdvvaa sc-gsDJrp hZfQVt jXLjZO Flex-fdCmZB fKbRKc">
-                            <div className="float-start pe-3 sc-bdvvaa gZrIkC Box-cYwFwn byZIfc">
-                              <img
-                                draggable="false"
-                                src="https://www.datocms-assets.com/38511/1639586965-by-role.svg"
-                                alt="By role"
-
-                                // style="max-width:24px;height:auto"
-                              />
-                            </div>
-                            <p
-                              //   style="letter-spacing:0.06em"
-
-                              className="Text-jBexRX Text__StyledText-sc-12egtmw-0 fpYGqy"
-                            >
-                              By role
-                            </p>
+                    </div>
+                    <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                      <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                          <div class="overflow-hidden rounded-2">
+                            <img
+                              src="/assets/images/contents/small/img3.png"
+                              class="img-fluid img-center"
+                              alt="Illustration"
+                            />
                           </div>
-                          <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                            <div
-                              //   style="gap:28px 0"
-                              className="sc-hKwCoD dgEjxi"
-                            >
-                              <div className="sc-eCImvq hBziiI">
-                                <div
-                                  //   style="gap:28px 0"
-                                  className="sc-bdvvaa sc-gsDJrp hKmdYz jXLjZO Flex-fdCmZB jQeDCS"
-                                >
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/roles/product-designers/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Designers
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/roles/product-managers/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Product Managers
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/roles/product-marketers/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            Product Marketers
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <a
-                                    display="block"
-                                    className="SubNavigationItemstyled__SubNavigationInternalLink-vjf25j-0 galzfd"
-                                    href="/roles/user-researchers/"
-                                  >
-                                    <div className="sc-bdvvaa sc-gsDJrp itMAzf jXLjZO Flex-fdCmZB jQeDCS">
-                                      <div className="sc-bdvvaa itMAzf Box-cYwFwn byZIfc">
-                                        <div className="sc-bdvvaa sc-gsDJrp jZgdhz jXLjZO Flex-fdCmZB jQeDCS">
-                                          <p className="Text-jBexRX Text__StyledText-sc-12egtmw-0 cXmvEL SubNavigationItemstyled__SubNavigationLinkLabel-vjf25j-2 gKqyUc">
-                                            UX Researchers
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
+                          <h5 class="title mt-3 mb-2 text-brand fw-600">
+                            Whiteboard
+                          </h5>
+                          <p class="detail fs-6 mb-0">
+                            For this you have 4 interesting information boards.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                      <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                          <div class="">
+                            <img
+                              src="https://images.ctfassets.net/w6r2i5d8q73s/5NdleXapyAkSmj2SHHX7qR/50817736057c904210a6aa010efb856a/XSS-Meet.png?fm=webp"
+                              class="img-fluid img-center"
+                              alt="Illustration"
+                            />
                           </div>
+                          <h5 class="title mt-3 mb-2 text-brand fw-600">
+                            Collection
+                          </h5>
+                          <p class="detail fs-6 mb-0">
+                            For this you have 4 interesting information boards.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -589,7 +311,7 @@ const Header = () => {
         <div className="collapse navbar-collapse ms-3" id="navbarExample1">
           <ul
             className="navbar-nav ms-auto ps-lg-0"
-            style={{ paddingLeft: "0.15rem" }}
+            style={{ paddingLeft: '0.15rem' }}
           >
             <li className="nav-item">
               <a className="nav-link" href="/login">

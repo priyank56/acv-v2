@@ -4,6 +4,7 @@
   --brand: #f05454;
   --bs-brand: #f05454;
   --bs-brand-rgb: 240, 84, 84;
+  --bs-dark-rgb: 18, 18, 18;
 }
 html {
   cursor: url('/public/assets/cursor.svg'), pointer;

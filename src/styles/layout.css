@@ -18,8 +18,8 @@
   padding-left: 0.75rem !important;
   padding-right: 0.75rem !important;
 }
-.nav-container{
-    /* opacity: 1;
+.nav-container {
+  /* opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0px);
@@ -41,11 +41,16 @@
     top: 100%;
     left: 0px; */
 
-    box-sizing: border-box;
-    margin: 0px;
-    min-width: 0px;
-    overflow: hidden;
-    background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  margin: 0px;
+  min-width: 0px;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar .dropdown-menu {
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%);
+  border: 0;
 }
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {

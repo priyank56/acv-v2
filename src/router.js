@@ -3,11 +3,13 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Home from './pages/Home/index';
 import Dashboard from 'pages/Dashboard';
+import Whiteboard from 'pages/Whiteboard';
 
 const PublicRoutes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/whiteboard" component={Whiteboard} />
       <Route exact path="/dashboard" component={Dashboard} />
     </Switch>
   </BrowserRouter>
