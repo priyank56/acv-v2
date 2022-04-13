@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Icon from 'react-feather';
 import ContentScroller from 'components/widgets/ContentScroller';
 import Cta from 'components/widgets/Cta';
 import Footer from 'components/widgets/Footer';
 import Header from 'components/layout/Header';
 import CtaButton from 'components/blocks/CtaButton';
+import './whiteboard';
 
 import './Home.css';
 
 const Home = () => {
+  useEffect(() => {});
   return (
     <div className="home">
       <Header />
       <div className="hero-main bg-dark">
-        <div className="pt-5 pb-5 bg-lght">
+        <div className="hero-container pt-5 pb-5 bg-lght">
           <div className="container">
             <div className="mb-5">
               <div className="row row-grid align-items-center">
@@ -22,7 +24,7 @@ const Home = () => {
                     <img
                       alt="ACV - Tangible IT"
                       src="/assets/images/contents/teacher-collborating.png"
-                      className="img-fluid mw-md-120 hero"
+                      className="img-fluid"
                     />
                   </figure>
                 </div>
@@ -131,6 +133,22 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* <canvas style={{ width: '500px', height: '500px' }}></canvas> */}
+      <div id="force" className="d-none"></div>
+      <div id="touches" className="d-none"></div>
+      <canvas style={{ width: '100%', height: '100%' }}>
+        Sorry, your browser is too old for this demo.
+      </canvas>
+      {/* <div className="row justify-content-center space-x">
+        <div className="col-lg-8 order-lg-2 shadow-xl rounded-5 overflow-hidden bg-white box-content p-2 pt-0 videoScreen">
+          <div className="w-100 items-center videoScreenElem">
+            <div className="w-3 h-3 rounded-5 bg-danger"></div>
+            <div className="w-3 h-3 rounded-5 bg-warning ms-2"></div>
+            <div className="w-3 h-3 rounded-5 bg-success ms-2"></div>
+          </div>
+          <div className="w-100 overflow-hidden"></div>
+        </div>
+      </div> */}
       <section className="slice slice-lg cmp-section">
         <div className="container">
           <div className="row justify-content-center">

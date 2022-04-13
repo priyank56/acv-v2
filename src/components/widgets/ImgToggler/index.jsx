@@ -17,7 +17,7 @@ const ImgToggler = () => {
               height="48"
               src="/logo192.png"
               alt="ACV logo"
-              class="rounded"
+              className="rounded"
             />
           </a>
         </div>

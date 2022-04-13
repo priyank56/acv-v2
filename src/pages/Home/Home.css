@@ -1,3 +1,7 @@
+.home {
+  overflow-x: clip;
+  user-select: none;
+}
 .btn-neutral {
   background-color: transparent !important;
   color: #273444 !important;
@@ -48,9 +52,48 @@
 .hero-main .bg-lght {
   background: white;
 }
+
+.hero-container {
+  width: calc(100% + 60px);
+  padding-right: 60px;
+  position: relative;
+  z-index: 1;
+}
+
 @media all and (min-width: 992px) {
   .hero-main .bg-lght {
     background: white;
     border-bottom-right-radius: 100%;
   }
+}
+
+canvas {
+  cursor: url('/public/assets/pcursor.png'), pointer !important;
+  position: absolute;
+  top: 333px;
+  left: 0;
+}
+
+/* .videoScreen .videoScreenElem {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.h-3 {
+  height: 0.75rem;
+} */
+
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  z-index: 2 !important;
+  position: relative !important;
 }
