@@ -53,89 +53,111 @@ window.onload = function () {
     }
   }
 
-  for (const ev of ['touchstart', 'mousedown']) {
-    canvas.addEventListener(ev, function (e) {
-      let pressure = 0.1;
-      let x, y;
-      if (
-        e.touches &&
-        e.touches[0] &&
-        typeof e.touches[0]['force'] !== 'undefined'
-      ) {
-        if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
+  /**
+   * Remove the previous stroke from history and repaint the entire canvas based on history
+   * @return {void}
+   */
+  //   function undoDraw() {
+  //     strokeHistory.pop();
+  //     context.clearRect(0, 0, canvas.width, canvas.height);
+
+  //     strokeHistory.map(function (stroke) {
+  //       if (strokeHistory.length === 0) return;
+
+  //       context.beginPath();
+
+  //       let strokePath = [];
+  //       stroke.map(function (point) {
+  //         strokePath.push(point);
+  //         drawOnCanvas(strokePath);
+  //       });
+  //     });
+  //   }
+
+  ['touchstart', 'mousedown']
+    .forEach((ev) => {
+      canvas.addEventListener(ev, function (e) {
+        let pressure = 0.1;
+        let x, y;
+        if (
+          e.touches &&
+          e.touches[0] &&
+          typeof e.touches[0]['force'] !== 'undefined'
+        ) {
+          if (e.touches[0]['force'] > 0) {
+            pressure = e.touches[0]['force'];
+          }
+          x = e.touches[0].pageX * 2;
+          y = e.touches[0].pageY * 2;
+        } else {
+          pressure = 1.0;
+          x = e.pageX * 2;
+          y = e.pageY * 2;
         }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
-      } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
-      }
 
-      isMousedown = true;
+        isMousedown = true;
 
-      lineWidth = Math.log(pressure + 1) * 20;
-      context.lineWidth = lineWidth; // pressure * 50;
+        lineWidth = Math.log(pressure + 1) * 20;
+        context.lineWidth = lineWidth; // pressure * 50;
 
-      points.push({ x, y, lineWidth });
-      drawOnCanvas(points);
-    });
-  }
+        points.push({ x, y, lineWidth });
+        drawOnCanvas(points);
+      });
+    })
 
-  for (const ev of ['touchmove', 'mousemove']) {
-    canvas.addEventListener(ev, function (e) {
-      if (!isMousedown) return;
-      e.preventDefault();
+    [('touchmove', 'mousemove')].forEach((ev) => {
+      canvas.addEventListener(ev, function (e) {
+        if (!isMousedown) return;
+        e.preventDefault();
 
-      let pressure = 0.1;
-      let x, y;
-      if (
-        e.touches &&
-        e.touches[0] &&
-        typeof e.touches[0]['force'] !== 'undefined'
-      ) {
-        if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
+        let pressure = 0.1;
+        let x, y;
+        if (
+          e.touches &&
+          e.touches[0] &&
+          typeof e.touches[0]['force'] !== 'undefined'
+        ) {
+          if (e.touches[0]['force'] > 0) {
+            pressure = e.touches[0]['force'];
+          }
+          x = e.touches[0].pageX * 2;
+          y = e.touches[0].pageY * 2;
+        } else {
+          pressure = 1.0;
+          x = e.pageX * 2;
+          y = e.pageY * 2;
         }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
-      } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
-      }
 
-      // smoothen line width
-      lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
-      points.push({ x, y, lineWidth });
+        // smoothen line width
+        lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
+        points.push({ x, y, lineWidth });
 
-      drawOnCanvas(points);
+        drawOnCanvas(points);
 
-      requestIdleCallback(() => {
-        $force.textContent = 'force = ' + pressure;
+        requestIdleCallback(() => {
+          $force.textContent = 'force = ' + pressure;
 
-        const touch = e.touches ? e.touches[0] : null;
-        if (touch) {
-          $touches.innerHTML = `
-          touchType = ${touch.touchType} ${
-            touch.touchType === 'direct' ? '👆' : '✍️'
-          } <br/>
-          radiusX = ${touch.radiusX} <br/>
-          radiusY = ${touch.radiusY} <br/>
-          rotationAngle = ${touch.rotationAngle} <br/>
-          altitudeAngle = ${touch.altitudeAngle} <br/>
-          azimuthAngle = ${touch.azimuthAngle} <br/>
-        `;
-        }
+          const touch = e.touches ? e.touches[0] : null;
+          if (touch) {
+            $touches.innerHTML = `
+            touchType = ${touch.touchType} ${
+              touch.touchType === 'direct' ? '👆' : '✍️'
+            } <br/>
+            radiusX = ${touch.radiusX} <br/>
+            radiusY = ${touch.radiusY} <br/>
+            rotationAngle = ${touch.rotationAngle} <br/>
+            altitudeAngle = ${touch.altitudeAngle} <br/>
+            azimuthAngle = ${touch.azimuthAngle} <br/>
+          `;
+          }
+        });
       });
     });
-  }
 
-  for (const ev of ['touchend', 'touchleave', 'mouseup']) {
+  ['touchend', 'touchleave', 'mouseup'].forEach((ev) => {
     canvas.addEventListener(ev, function (e) {
-      let pressure = 0.1;
-      let x, y;
+      //   let pressure = 0.1;
+      //   let x, y;
 
       if (
         e.touches &&
@@ -143,14 +165,14 @@ window.onload = function () {
         typeof e.touches[0]['force'] !== 'undefined'
       ) {
         if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
+          //   pressure = e.touches[0]['force'];
         }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
+        // x = e.touches[0].pageX * 2;
+        // y = e.touches[0].pageY * 2;
       } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
+        // pressure = 1.0;
+        // x = e.pageX * 2;
+        // y = e.pageY * 2;
       }
 
       isMousedown = false;
@@ -162,5 +184,5 @@ window.onload = function () {
 
       lineWidth = 0;
     });
-  }
+  });
 };
