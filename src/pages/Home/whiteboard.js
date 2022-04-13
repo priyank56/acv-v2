@@ -53,27 +53,6 @@ window.onload = function () {
     }
   }
 
-  /**
-   * Remove the previous stroke from history and repaint the entire canvas based on history
-   * @return {void}
-   */
-  function undoDraw() {
-    strokeHistory.pop();
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    strokeHistory.map(function (stroke) {
-      if (strokeHistory.length === 0) return;
-
-      context.beginPath();
-
-      let strokePath = [];
-      stroke.map(function (point) {
-        strokePath.push(point);
-        drawOnCanvas(strokePath);
-      });
-    });
-  }
-
   for (const ev of ['touchstart', 'mousedown']) {
     canvas.addEventListener(ev, function (e) {
       let pressure = 0.1;
