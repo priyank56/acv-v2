@@ -1,10 +1,12 @@
 .Cta {
   height: 620px;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   color: #121212;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('/public/assets/images/bg.png');
+  background-size: 16px;
 }
 
 .Cta h1 {

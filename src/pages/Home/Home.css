@@ -67,13 +67,6 @@
   }
 }
 
-canvas {
-  cursor: url('/public/assets/pcursor.png'), pointer !important;
-  position: absolute;
-  top: 333px;
-  left: 0;
-}
-
 /* .videoScreen .videoScreenElem {
   height: 2.5rem;
   display: flex;
@@ -85,15 +78,3 @@ canvas {
 .h-3 {
   height: 0.75rem;
 } */
-
-img,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  z-index: 2 !important;
-  position: relative !important;
-}

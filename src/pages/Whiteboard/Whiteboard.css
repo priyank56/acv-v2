@@ -1,0 +1,28 @@
+.whiteboard {
+  overflow-x: clip;
+  user-select: none;
+}
+
+.whiteboard img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  z-index: 2 !important;
+  position: relative;
+  pointer-events: none;
+}
+
+canvas {
+  /* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAD1BMVEX////19fXn5+fo6Ojl5eU/mVj3AAAAHElEQVR4AWMYkUDIEE3AxAlNQMUZTUBYcUSGFABtQAFVBCjxewAAAABJRU5ErkJggg==); */
+  background-image: url(/public/assets/images/bg.png);
+  background-size: 16px;
+  cursor: url('/public/assets/pcursor.png') 3 27, pointer !important;
+  position: absolute;
+  top: 62px;
+  left: 0;
+}

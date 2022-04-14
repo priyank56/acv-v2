@@ -4,9 +4,9 @@
 }
 .dragger {
   max-width: 50px;
-  position: absolute;
+  position: absolute !important;
   top: calc(80% - 25px);
-  left: -16px;
+  left: -20px;
 }
 .dark-image {
   border-radius: 0.6rem;
