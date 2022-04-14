@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as Icon from 'react-feather';
 import ContentScroller from 'components/widgets/ContentScroller';
 import Cta from 'components/widgets/Cta';

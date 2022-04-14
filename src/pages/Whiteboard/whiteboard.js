@@ -57,131 +57,371 @@ window.onload = function () {
    * Remove the previous stroke from history and repaint the entire canvas based on history
    * @return {void}
    */
-  function undoDraw() {
-    strokeHistory.pop();
-    context.clearRect(0, 0, canvas.width, canvas.height);
+  // function undoDraw() {
+  //   strokeHistory.pop();
+  //   context.clearRect(0, 0, canvas.width, canvas.height);
 
-    strokeHistory.map(function (stroke) {
-      if (strokeHistory.length === 0) return;
+  //   strokeHistory.map(function (stroke) {
+  //     if (strokeHistory.length === 0) return;
 
-      context.beginPath();
+  //     context.beginPath();
 
-      let strokePath = [];
-      stroke.map(function (point) {
-        strokePath.push(point);
-        drawOnCanvas(strokePath);
-      });
-    });
-  }
+  //     let strokePath = [];
+  //     stroke.map(function (point) {
+  //       strokePath.push(point);
+  //       drawOnCanvas(strokePath);
+  //     });
+  //   });
+  // }
 
-  for (const ev of ['touchstart', 'mousedown']) {
-    canvas.addEventListener(ev, function (e) {
-      let pressure = 0.1;
-      let x, y;
-      if (
-        e.touches &&
-        e.touches[0] &&
-        typeof e.touches[0]['force'] !== 'undefined'
-      ) {
-        if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
-        }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
-      } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
+  canvas.addEventListener('touchstart', function (e) {
+    let pressure = 0.1;
+    let x, y;
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        pressure = e.touches[0]['force'];
       }
+      x = e.touches[0].pageX * 2;
+      y = e.touches[0].pageY * 2;
+    } else {
+      pressure = 1.0;
+      x = e.pageX * 2;
+      y = e.pageY * 2;
+    }
 
-      isMousedown = true;
+    isMousedown = true;
 
-      lineWidth = Math.log(pressure + 1) * 20;
-      context.lineWidth = lineWidth; // pressure * 50;
+    lineWidth = Math.log(pressure + 1) * 20;
+    context.lineWidth = lineWidth; // pressure * 50;
 
-      points.push({ x, y, lineWidth });
-      drawOnCanvas(points);
-    });
-  }
+    points.push({ x, y, lineWidth });
+    drawOnCanvas(points);
+  });
 
-  for (const ev of ['touchmove', 'mousemove']) {
-    canvas.addEventListener(ev, function (e) {
-      if (!isMousedown) return;
-      e.preventDefault();
-
-      let pressure = 0.1;
-      let x, y;
-      if (
-        e.touches &&
-        e.touches[0] &&
-        typeof e.touches[0]['force'] !== 'undefined'
-      ) {
-        if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
-        }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
-      } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
+  canvas.addEventListener('mousedown', function (e) {
+    let pressure = 0.1;
+    let x, y;
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        pressure = e.touches[0]['force'];
       }
+      x = e.touches[0].pageX * 2;
+      y = e.touches[0].pageY * 2;
+    } else {
+      pressure = 1.0;
+      x = e.pageX * 2;
+      y = e.pageY * 2;
+    }
 
-      // smoothen line width
-      lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
-      points.push({ x, y, lineWidth });
+    isMousedown = true;
 
-      drawOnCanvas(points);
+    lineWidth = Math.log(pressure + 1) * 20;
+    context.lineWidth = lineWidth; // pressure * 50;
 
-      requestIdleCallback(() => {
-        $force.textContent = 'force = ' + pressure;
+    points.push({ x, y, lineWidth });
+    drawOnCanvas(points);
+  });
 
-        const touch = e.touches ? e.touches[0] : null;
-        if (touch) {
-          $touches.innerHTML = `
+  canvas.addEventListener('touchmove', function (e) {
+    if (!isMousedown) return;
+    e.preventDefault();
+
+    let pressure = 0.1;
+    let x, y;
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        pressure = e.touches[0]['force'];
+      }
+      x = e.touches[0].pageX * 2;
+      y = e.touches[0].pageY * 2;
+    } else {
+      pressure = 1.0;
+      x = e.pageX * 2;
+      y = e.pageY * 2;
+    }
+
+    // smoothen line width
+    lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
+    points.push({ x, y, lineWidth });
+
+    drawOnCanvas(points);
+
+    requestIdleCallback(() => {
+      $force.textContent = 'force = ' + pressure;
+
+      const touch = e.touches ? e.touches[0] : null;
+      if (touch) {
+        $touches.innerHTML = `
           touchType = ${touch.touchType} ${
-            touch.touchType === 'direct' ? '👆' : '✍️'
-          } <br/>
+          touch.touchType === 'direct' ? '👆' : '✍️'
+        } <br/>
           radiusX = ${touch.radiusX} <br/>
           radiusY = ${touch.radiusY} <br/>
           rotationAngle = ${touch.rotationAngle} <br/>
           altitudeAngle = ${touch.altitudeAngle} <br/>
           azimuthAngle = ${touch.azimuthAngle} <br/>
         `;
-        }
-      });
-    });
-  }
-
-  for (const ev of ['touchend', 'touchleave', 'mouseup']) {
-    canvas.addEventListener(ev, function (e) {
-      let pressure = 0.1;
-      let x, y;
-
-      if (
-        e.touches &&
-        e.touches[0] &&
-        typeof e.touches[0]['force'] !== 'undefined'
-      ) {
-        if (e.touches[0]['force'] > 0) {
-          pressure = e.touches[0]['force'];
-        }
-        x = e.touches[0].pageX * 2;
-        y = e.touches[0].pageY * 2;
-      } else {
-        pressure = 1.0;
-        x = e.pageX * 2;
-        y = e.pageY * 2;
       }
-
-      isMousedown = false;
-
-      requestIdleCallback(function () {
-        strokeHistory.push([...points]);
-        points = [];
-      });
-
-      lineWidth = 0;
     });
-  }
+  });
+
+  canvas.addEventListener('mousemove', function (e) {
+    if (!isMousedown) return;
+    e.preventDefault();
+
+    let pressure = 0.1;
+    let x, y;
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        pressure = e.touches[0]['force'];
+      }
+      x = e.touches[0].pageX * 2;
+      y = e.touches[0].pageY * 2;
+    } else {
+      pressure = 1.0;
+      x = e.pageX * 2;
+      y = e.pageY * 2;
+    }
+
+    // smoothen line width
+    lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
+    points.push({ x, y, lineWidth });
+
+    drawOnCanvas(points);
+
+    requestIdleCallback(() => {
+      $force.textContent = 'force = ' + pressure;
+
+      const touch = e.touches ? e.touches[0] : null;
+      if (touch) {
+        $touches.innerHTML = `
+          touchType = ${touch.touchType} ${
+          touch.touchType === 'direct' ? '👆' : '✍️'
+        } <br/>
+          radiusX = ${touch.radiusX} <br/>
+          radiusY = ${touch.radiusY} <br/>
+          rotationAngle = ${touch.rotationAngle} <br/>
+          altitudeAngle = ${touch.altitudeAngle} <br/>
+          azimuthAngle = ${touch.azimuthAngle} <br/>
+        `;
+      }
+    });
+  });
+
+  canvas.addEventListener('touchend', function (e) {
+    // let pressure = 0.1;
+    // let x, y;
+
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        // pressure = e.touches[0]['force'];
+      }
+      // x = e.touches[0].pageX * 2;
+      // y = e.touches[0].pageY * 2;
+    } else {
+      // pressure = 1.0;
+      // x = e.pageX * 2;
+      // y = e.pageY * 2;
+    }
+
+    isMousedown = false;
+
+    requestIdleCallback(function () {
+      strokeHistory.push([...points]);
+      points = [];
+    });
+
+    lineWidth = 0;
+  });
+
+  canvas.addEventListener('touchleave', function (e) {
+    // let pressure = 0.1;
+    // let x, y;
+
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        // pressure = e.touches[0]['force'];
+      }
+      // x = e.touches[0].pageX * 2;
+      // y = e.touches[0].pageY * 2;
+    } else {
+      // pressure = 1.0;
+      // x = e.pageX * 2;
+      // y = e.pageY * 2;
+    }
+
+    isMousedown = false;
+
+    requestIdleCallback(function () {
+      strokeHistory.push([...points]);
+      points = [];
+    });
+
+    lineWidth = 0;
+  });
+
+  canvas.addEventListener('mouseup', function (e) {
+    // let pressure = 0.1;
+    // let x, y;
+
+    if (
+      e.touches &&
+      e.touches[0] &&
+      typeof e.touches[0]['force'] !== 'undefined'
+    ) {
+      if (e.touches[0]['force'] > 0) {
+        // pressure = e.touches[0]['force'];
+      }
+      // x = e.touches[0].pageX * 2;
+      // y = e.touches[0].pageY * 2;
+    } else {
+      // pressure = 1.0;
+      // x = e.pageX * 2;
+      // y = e.pageY * 2;
+    }
+
+    isMousedown = false;
+
+    requestIdleCallback(function () {
+      strokeHistory.push([...points]);
+      points = [];
+    });
+
+    lineWidth = 0;
+  });
+
+  // for (const ev of ['touchstart', 'mousedown']) {
+  //   canvas.addEventListener(ev, function (e) {
+  //     let pressure = 0.1;
+  //     let x, y;
+  //     if (
+  //       e.touches &&
+  //       e.touches[0] &&
+  //       typeof e.touches[0]['force'] !== 'undefined'
+  //     ) {
+  //       if (e.touches[0]['force'] > 0) {
+  //         pressure = e.touches[0]['force'];
+  //       }
+  //       x = e.touches[0].pageX * 2;
+  //       y = e.touches[0].pageY * 2;
+  //     } else {
+  //       pressure = 1.0;
+  //       x = e.pageX * 2;
+  //       y = e.pageY * 2;
+  //     }
+
+  //     isMousedown = true;
+
+  //     lineWidth = Math.log(pressure + 1) * 20;
+  //     context.lineWidth = lineWidth; // pressure * 50;
+
+  //     points.push({ x, y, lineWidth });
+  //     drawOnCanvas(points);
+  //   });
+  // }
+
+  // for (const ev of ['touchmove', 'mousemove']) {
+  //   canvas.addEventListener(ev, function (e) {
+  //     if (!isMousedown) return;
+  //     e.preventDefault();
+
+  //     let pressure = 0.1;
+  //     let x, y;
+  //     if (
+  //       e.touches &&
+  //       e.touches[0] &&
+  //       typeof e.touches[0]['force'] !== 'undefined'
+  //     ) {
+  //       if (e.touches[0]['force'] > 0) {
+  //         pressure = e.touches[0]['force'];
+  //       }
+  //       x = e.touches[0].pageX * 2;
+  //       y = e.touches[0].pageY * 2;
+  //     } else {
+  //       pressure = 1.0;
+  //       x = e.pageX * 2;
+  //       y = e.pageY * 2;
+  //     }
+
+  //     // smoothen line width
+  //     lineWidth = Math.log(pressure + 1) * 40 * 0.2 + lineWidth * 0.4;
+  //     points.push({ x, y, lineWidth });
+
+  //     drawOnCanvas(points);
+
+  //     requestIdleCallback(() => {
+  //       $force.textContent = 'force = ' + pressure;
+
+  //       const touch = e.touches ? e.touches[0] : null;
+  //       if (touch) {
+  //         $touches.innerHTML = `
+  //         touchType = ${touch.touchType} ${
+  //           touch.touchType === 'direct' ? '👆' : '✍️'
+  //         } <br/>
+  //         radiusX = ${touch.radiusX} <br/>
+  //         radiusY = ${touch.radiusY} <br/>
+  //         rotationAngle = ${touch.rotationAngle} <br/>
+  //         altitudeAngle = ${touch.altitudeAngle} <br/>
+  //         azimuthAngle = ${touch.azimuthAngle} <br/>
+  //       `;
+  //       }
+  //     });
+  //   });
+  // }
+
+  // for (const ev of ['touchend', 'touchleave', 'mouseup']) {
+  //   canvas.addEventListener(ev, function (e) {
+  //     let pressure = 0.1;
+  //     let x, y;
+
+  //     if (
+  //       e.touches &&
+  //       e.touches[0] &&
+  //       typeof e.touches[0]['force'] !== 'undefined'
+  //     ) {
+  //       if (e.touches[0]['force'] > 0) {
+  //         pressure = e.touches[0]['force'];
+  //       }
+  //       x = e.touches[0].pageX * 2;
+  //       y = e.touches[0].pageY * 2;
+  //     } else {
+  //       pressure = 1.0;
+  //       x = e.pageX * 2;
+  //       y = e.pageY * 2;
+  //     }
+
+  //     isMousedown = false;
+
+  //     requestIdleCallback(function () {
+  //       strokeHistory.push([...points]);
+  //       points = [];
+  //     });
+
+  //     lineWidth = 0;
+  //   });
+  // }
 };
