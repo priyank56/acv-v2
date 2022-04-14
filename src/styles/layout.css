@@ -75,3 +75,10 @@
     margin-top: 10px;
   }
 }
+.hover-text-auto:hover .detail {
+  text-decoration: underline !important;
+}
+
+.card .detail {
+  color: #121212;
+}

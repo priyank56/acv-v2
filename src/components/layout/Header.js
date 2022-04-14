@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Icon from 'react-feather';
+import { Link } from 'react-router-dom';
 
 import 'styles/layout.css';
 
@@ -53,80 +54,104 @@ const Header = () => {
                 <div className="container">
                   <div className="row my-3">
                     <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                          <div className="overflow-hidden rounded-2">
-                            <img
-                              src="/assets/images/contents/small/img1.png"
-                              className="img-fluid img-center"
-                              alt="Illustration"
-                            />
+                      <Link
+                        to="/attendance"
+                        className="text-decoration-none hover-text-auto"
+                      >
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body">
+                            <div className="overflow-hidden rounded-2">
+                              <img
+                                src="/assets/images/contents/small/img1.png"
+                                className="img-fluid img-center"
+                                alt="Illustration"
+                              />
+                            </div>
+                            <h5 className="title mt-3 mb-2 text-brand fw-600">
+                              Attendance
+                            </h5>
+                            <p className="detail fs-6 mb-0">
+                              For this you have 4 interesting information
+                              boards.
+                            </p>
                           </div>
-                          <h5 className="title mt-3 mb-2 text-brand fw-600">
-                            Attendance
-                          </h5>
-                          <p className="detail fs-6 mb-0">
-                            For this you have 4 interesting information boards.
-                          </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                     <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                          <div className="overflow-hidden rounded-2">
-                            <img
-                              src="/assets/images/contents/small/img2.png"
-                              className="img-fluid img-center"
-                              alt="Illustration"
-                            />
+                      <Link
+                        to="/dashboard"
+                        className="text-decoration-none hover-text-auto"
+                      >
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body">
+                            <div className="overflow-hidden rounded-2">
+                              <img
+                                src="/assets/images/contents/small/img2.png"
+                                className="img-fluid img-center"
+                                alt="Illustration"
+                              />
+                            </div>
+                            <h5 className="title mt-3 mb-2 text-brand fw-600">
+                              Dashboard
+                            </h5>
+                            <p className="detail fs-6 mb-0">
+                              For this you have 4 interesting information
+                              boards.
+                            </p>
                           </div>
-                          <h5 className="title mt-3 mb-2 text-brand fw-600">
-                            Dashboard
-                          </h5>
-                          <p className="detail fs-6 mb-0">
-                            For this you have 4 interesting information boards.
-                          </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                     <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                          <div className="overflow-hidden rounded-2">
-                            <img
-                              src="/assets/images/contents/small/img3.png"
-                              className="img-fluid img-center"
-                              alt="Illustration"
-                            />
+                      <Link
+                        to="/whiteboard"
+                        className="text-decoration-none hover-text-auto"
+                      >
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body">
+                            <div className="overflow-hidden rounded-2">
+                              <img
+                                src="/assets/images/contents/small/img3.png"
+                                className="img-fluid img-center"
+                                alt="Illustration"
+                              />
+                            </div>
+                            <h5 className="title mt-3 mb-2 text-brand fw-600">
+                              Whiteboard
+                            </h5>
+                            <p className="detail fs-6 mb-0">
+                              For this you have 4 interesting information
+                              boards.
+                            </p>
                           </div>
-                          <h5 className="title mt-3 mb-2 text-brand fw-600">
-                            Whiteboard
-                          </h5>
-                          <p className="detail fs-6 mb-0">
-                            For this you have 4 interesting information boards.
-                          </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                     <div className="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                          <div className="">
-                            <img
-                              src="https://images.ctfassets.net/w6r2i5d8q73s/5NdleXapyAkSmj2SHHX7qR/50817736057c904210a6aa010efb856a/XSS-Meet.png?fm=webp"
-                              className="img-fluid img-center"
-                              alt="Illustration"
-                            />
+                      <Link
+                        to="/collection"
+                        className="text-decoration-none hover-text-auto"
+                      >
+                        <div className="card border-0 shadow-sm">
+                          <div className="card-body">
+                            <div className="">
+                              <img
+                                src="https://images.ctfassets.net/w6r2i5d8q73s/5NdleXapyAkSmj2SHHX7qR/50817736057c904210a6aa010efb856a/XSS-Meet.png?fm=webp"
+                                className="img-fluid img-center"
+                                alt="Illustration"
+                              />
+                            </div>
+                            <h5 className="title mt-3 mb-2 text-brand fw-600">
+                              Collection
+                            </h5>
+                            <p className="detail fs-6 mb-0">
+                              For this you have 4 interesting information
+                              boards.
+                            </p>
                           </div>
-                          <h5 className="title mt-3 mb-2 text-brand fw-600">
-                            Collection
-                          </h5>
-                          <p className="detail fs-6 mb-0">
-                            For this you have 4 interesting information boards.
-                          </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 </div>

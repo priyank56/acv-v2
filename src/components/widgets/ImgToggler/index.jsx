@@ -8,7 +8,6 @@ const ImgToggler = () => {
           <a
             aria-current="page"
             title="ACV"
-            href="/"
             className="d-flex align-self-center"
           >
             <img
@@ -19,6 +18,35 @@ const ImgToggler = () => {
               alt="ACV logo"
               className="rounded"
             />
+          </a>
+          <h5 className="fs-6 ps-5 pe-5 report-header">Reports by</h5>
+          <a
+            aria-current="page"
+            title="ACV"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+          >
+            Subject
+          </a>
+          <a
+            aria-current="page"
+            title="ACV"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+          >
+            Student
+          </a>
+          <a
+            aria-current="page"
+            title="ACV"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+          >
+            Teacher
+          </a>
+          <a
+            aria-current="page"
+            title="ACV"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+          >
+            Special
           </a>
         </div>
         <img
