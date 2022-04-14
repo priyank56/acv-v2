@@ -5,7 +5,7 @@ const ImgToggler = () => {
     <div className="space-t">
       <div className="rounded-5 bg-white pb-4 tog-container">
         <div className="toggler-navs d-flex align-content-center">
-          <a
+          <lable
             aria-current="page"
             title="ACV"
             className="d-flex align-self-center"
@@ -18,36 +18,36 @@ const ImgToggler = () => {
               alt="ACV logo"
               className="rounded"
             />
-          </a>
+          </lable>
           <h5 className="fs-6 ps-5 pe-5 report-header">Reports by</h5>
-          <a
+          <lable
             aria-current="page"
             title="ACV"
             className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
           >
             Subject
-          </a>
-          <a
+          </lable>
+          <lable
             aria-current="page"
             title="ACV"
             className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
           >
             Student
-          </a>
-          <a
+          </lable>
+          <lable
             aria-current="page"
             title="ACV"
             className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
           >
             Teacher
-          </a>
-          <a
+          </lable>
+          <lable
             aria-current="page"
             title="ACV"
             className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
           >
             Special
-          </a>
+          </lable>
         </div>
         <img
           src="/assets/images/dashboard.png"
