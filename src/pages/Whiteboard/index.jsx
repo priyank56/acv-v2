@@ -4,12 +4,12 @@ import ContentScroller from 'components/widgets/ContentScroller';
 import Cta from 'components/widgets/Cta';
 import Footer from 'components/widgets/Footer';
 import Header from 'components/layout/Header';
-import './whiteboard';
+import wbLoader from './whiteboard';
 import './Whiteboard.css';
 
 const Whiteboard = () => {
   return (
-    <div className="whiteboard">
+    <div className="whiteboard" onLoad={wbLoader}>
       <Header />
       <Hero />
       {/* <canvas style={{ width: '500px', height: '500px' }}></canvas> */}

@@ -16,35 +16,35 @@ const ImgToggler = () => {
               height="48"
               src="/logo192.png"
               alt="ACV logo"
-              className="rounded"
+              className="rounded-5"
             />
           </lable>
-          <h5 className="fs-6 ps-5 pe-5 report-header">Reports by</h5>
+          <h5 className="fs-5 ps-5 pe-5 report-header">Reports by</h5>
           <lable
             aria-current="page"
             title="ACV"
-            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center text-primary link btn"
           >
             Subject
           </lable>
           <lable
             aria-current="page"
             title="ACV"
-            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center text-success link btn"
           >
             Student
           </lable>
           <lable
             aria-current="page"
             title="ACV"
-            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center text-warning link btn"
           >
             Teacher
           </lable>
           <lable
             aria-current="page"
             title="ACV"
-            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center"
+            className="db-navs fs-6 ps-2 pe-2 d-flex align-self-center text-danger link btn"
           >
             Special
           </lable>

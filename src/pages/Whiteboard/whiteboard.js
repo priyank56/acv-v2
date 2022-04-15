@@ -1,4 +1,5 @@
-window.onload = function () {
+export default function wbLoader() {
+  console.log('Me calles');
   const $force = document.querySelectorAll('#force')[0];
   const $touches = document.querySelectorAll('#touches')[0];
   const canvas = document.querySelectorAll('canvas')[0];
@@ -424,4 +425,4 @@ window.onload = function () {
   //     lineWidth = 0;
   //   });
   // }
-};
+}
