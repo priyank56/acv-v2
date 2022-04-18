@@ -3,15 +3,15 @@
   user-select: none;
 }
 
-img,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-button {
+.hero img,
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6,
+.hero p,
+.hero button {
   z-index: 2 !important;
   position: relative;
   pointer-events: none;
